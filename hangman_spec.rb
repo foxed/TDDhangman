@@ -55,15 +55,15 @@ describe 'guess' do
 
   it 'player gets correct guess' do
     guess = Guess.new
-    letters = WordFile.select_word.split ""
+    game = Game.new
 
-    expect(letters).to include(guess.get_guess)
+    expect(game.letters).to include(guess.get_guess)
   end
 
   it 'player gets incorrect guess' do
     guess = Guess.new
-    letters = WordFile.select_word.split ""
+    game = Game.new
 
-    expect(letters).to_not include(guess.get_guess)
+    expect(game.letters).to_not include(guess.get_guess)
   end
 end
